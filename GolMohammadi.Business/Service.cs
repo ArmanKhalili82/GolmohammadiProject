@@ -130,10 +130,17 @@ public class Service : IService
         return objSubGroup;
     }
 
-    public async Task CallAllAddMethods()
+    //public async Task CallAllAddMethods()
+    //{
+    //    await CreateProductGroup();
+    //    await CreateSubGroup();
+    //    await CreateProduct();
+    //}
+
+    public async Task CallAllAddMethods(ProductGroup productGroup, SubGroup subGroup, Product product)
     {
-        await CreateProductGroup();
-        await CreateSubGroup();
-        await CreateProduct();
+        await CreateProductGroup(productGroup);
+        await CreateSubGroup(subGroup);
+        await CreateProduct(product);
     }
 }

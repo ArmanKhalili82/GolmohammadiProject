@@ -23,4 +23,5 @@ public interface IService
     Task DeleteEditProductGroup(int id);
     Task DeleteSubGroup(int id);
     Task DeleteProduct(int id);
+    Task CallAllAddMethods(ProductGroup productGroup, SubGroup subGroup, Product product);
 }
