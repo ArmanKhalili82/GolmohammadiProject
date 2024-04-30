@@ -32,4 +32,11 @@ public class Service
         var productItem = new Product { Id = 1, Name = "b", SubGroupId = 1 };
         await _context.Products.AddAsync(productItem);
     }
+
+    public async Task CallMethodes()
+    {
+        await CreateGroupPost();
+        await CreateSubGroup();
+        await CreateProduct();
+    }
 }
