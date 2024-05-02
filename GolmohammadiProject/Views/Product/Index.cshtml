@@ -27,9 +27,6 @@
                 <th>
                     Product
                 </th>
-                <th>
-                    Sub Group Id
-                </th>
                 <th></th>
             </tr>
         </thead>
@@ -39,8 +36,7 @@
                 <tr>
                     <td>@item.ProductGroupId</td>
                     <td>@item.Name</td>
-                    <td>@item.Products</td>
-                    <td>@item.ProductGroup</td>
+                    <td>@item.Id</td>
                     <td>
                         @* <div class="w-75 btn-group" role="group">
                             <a asp-controller="Country" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">

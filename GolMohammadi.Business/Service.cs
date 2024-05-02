@@ -48,6 +48,18 @@ public class Service : IService
         return products;
     }
 
+    public async Task<List<Product>> products()
+    {
+        List<Product> productObj = await _context.Products.Include(x => x.SubGroup).ToListAsync();
+        return productObj;
+    }
+
+    public async Task<List<SubGroup>> SubGroups()
+    {
+        List<SubGroup> subGroups = await _context.SubGroups.Include(x => x.ProductGroup).ToListAsync();
+        return subGroups;
+    }
+
     public async Task Update(SubGroup subGroup)
     {
         _context.SubGroups.Update(subGroup);

@@ -14,6 +14,8 @@ public interface IService
     Task<SubGroup> GetById(int id);
     Task Update(SubGroup subGroup);
     Task Delete(int id);
+    Task<List<Product>> products();
+    Task<List<SubGroup>> SubGroups();
     //Task<List<ProductGroup>> GetAllProductGroup();
     //Task<List<SubGroup>> GetAllSubGroup(int id);
     //Task<List<Product>> GetAllProduct();

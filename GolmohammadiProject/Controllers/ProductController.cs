@@ -15,8 +15,15 @@ public class ProductController : Controller
     [HttpGet]
     public async Task<IActionResult> Index(int id)
     {
-        List<SubGroup> objProducts = await _service.GetSubGroups(id);
-        return View(objProducts);
+        List<SubGroup> subGroups = await _service.SubGroups();
+        return View(subGroups);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Products()
+    {
+        List<Product> products = await _service.products();
+        return View(products);
     }
 
 
