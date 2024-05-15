@@ -1,4 +1,5 @@
 using GolMohammadi.Business.CustomerServices;
+using GolMohammadi.Business.FactorService;
 using GolMohammadi.Business.ProductServices;
 using GolmohammadiProject.Data;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //builder.Services.AddScoped<IService, Service>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IFactorService, FactorService>();
 
 var app = builder.Build();
 

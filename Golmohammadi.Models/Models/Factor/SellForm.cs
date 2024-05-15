@@ -13,6 +13,7 @@ namespace Golmohammadi.Models.Models.Factor
         public int Id { get; set; }
         public string ProductName { get; set; }
         public List<Products> Products { get; set; }
+        public int CustomerId { get; set; }
         public Customers customer { get; set; }
         public int Unit { get; set; }
         public int TotalPrice { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GolMohammadi.Business.FactorService
 {
-    public class FactorService
+    public class FactorService: IFactorService
     {
         private readonly ApplicationDbContext _context;
 
@@ -25,9 +25,9 @@ namespace GolMohammadi.Business.FactorService
             return factories;
         }
 
-        public async Task<Customers> GetById(int id)
+        public async Task<SellForm> GetById(int id)
         {
-            var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
+            var customer = await _context.SellForms.FirstOrDefaultAsync(x => x.CustomerId == id);
             return customer;
         }
     }
