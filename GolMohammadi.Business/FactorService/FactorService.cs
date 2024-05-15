@@ -30,11 +30,11 @@ namespace GolMohammadi.Business.FactorService
         {
             var form = await _context.SellForms.FirstOrDefaultAsync(x => x.Id == id);
             var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == form.CustomerId);
-            SellFactorViewModel vm = new SellFactorViewModel()
+            var vm = new SellFactorViewModel()
             {
-                Customer = new Customers()
+                Customer = new CustomerViewModel()
                 {
-
+                    Name = CustomerViewModel.Name;
                 }
             }
         }   
