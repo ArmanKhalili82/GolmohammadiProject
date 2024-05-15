@@ -27,6 +27,12 @@ namespace GolMohammadi.Business.FactorService
 
         public async Task<SellForm> GetById(int id)
         {
+            var form = await _context.SellForms.FirstOrDefaultAsync(x => x.Id == id);
+            return form;
+        }
+
+        public async Task<SellForm> GetByIdCustom(int id)
+        {
             var customer = await _context.SellForms.FirstOrDefaultAsync(x => x.CustomerId == id);
             return customer;
         }
