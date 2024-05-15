@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Golmohammadi.Models.Models.Factor;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -13,4 +14,5 @@ public class Product
     public int SubGroupId { get; set; }
     [JsonIgnore]
     public SubGroup SubGroup { get; set; }
+    public List<SellForm> sellForms { get; set; }
 }

@@ -1,4 +1,5 @@
-using GolMohammadi.Business;
+using GolMohammadi.Business.CustomerServices;
+using GolMohammadi.Business.ProductServices;
 using GolmohammadiProject.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
-builder.Services.AddScoped<IService, Service>();
+//builder.Services.AddScoped<IService, Service>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 var app = builder.Build();
 
