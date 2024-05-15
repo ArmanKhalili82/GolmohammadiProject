@@ -34,7 +34,7 @@ namespace GolMohammadi.Business.FactorService
             {
                 Customer = new CustomerViewModel()
                 {
-                    Name = CustomerViewModel.Name;
+                    Name = customer.Name
                 }
             }
         }   
