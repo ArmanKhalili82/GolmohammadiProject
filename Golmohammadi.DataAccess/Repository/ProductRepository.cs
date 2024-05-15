@@ -1,5 +1,5 @@
-﻿using GolmohammadiProject.Data;
-using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Product;
+using GolmohammadiProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Golmohammadi.DataAccess.Repository
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+    public class ProductRepository : Repository<Products>, IProductRepository
     {
         private ApplicationDbContext _db;
         public ProductRepository(ApplicationDbContext db) : base(db)
@@ -17,7 +17,7 @@ namespace Golmohammadi.DataAccess.Repository
             _db = db;
         }
 
-        public void Update(Product product)
+        public void Update(Products product)
         {
             _db.Products.Update(product);
         }

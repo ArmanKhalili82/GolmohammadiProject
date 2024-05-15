@@ -1,4 +1,4 @@
-﻿using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Golmohammadi.DataAccess.Repository
 {
-    public interface IProductRepository: IRepository<Product>
+    public interface IProductRepository: IRepository<Products>
     {
-        void Update(Product product);
+        void Update(Products product);
     }
 }

@@ -1,5 +1,5 @@
-﻿using GolmohammadiProject.Data;
-using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Product;
+using GolmohammadiProject.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace GolMohammadi.Business.ProductServices;
@@ -12,7 +12,7 @@ public class ProductService : IProductService
         _context = context;
     }
 
-    public async Task Create(Product product)
+    public async Task Create(Products product)
     {
         await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
@@ -20,24 +20,24 @@ public class ProductService : IProductService
 
     public async Task Delete(int productId)
     {
-        Product obj = await _context.Products.FindAsync(productId);
+        Products obj = await _context.Products.FindAsync(productId);
         _context.Remove(obj);
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<Product>> GetAllProducts()
+    public async Task<List<Products>> GetAllProducts()
     {
-        List<Product> products = await _context.Products.ToListAsync();
+        List<Products> products = await _context.Products.ToListAsync();
         return products;
     }
 
-    public async Task<Product> GetById(int id)
+    public async Task<Products> GetById(int id)
     {
         var product = await _context.Products.FindAsync(id);
         return product;
     }
 
-    public async Task Update(Product product)
+    public async Task Update(Products product)
     {
         _context.Products.Update(product);
         await _context.SaveChangesAsync();

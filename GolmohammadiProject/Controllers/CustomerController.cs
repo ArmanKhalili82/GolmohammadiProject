@@ -1,7 +1,6 @@
 ﻿using Golmohammadi.Models.Models.Customer;
 using GolMohammadi.Business.CustomerServices;
 using GolMohammadi.Business.ProductServices;
-using GolmohammadiProject.Models.Product;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GolmohammadiProject.Controllers
@@ -18,7 +17,7 @@ namespace GolmohammadiProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            List<Customer> customers = await _customerService.GetAllCustomers();
+            List<Customers> customers = await _customerService.GetAllCustomers();
             return View(customers);
         }
 
@@ -29,7 +28,7 @@ namespace GolmohammadiProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer(Customer customer)
+        public async Task<IActionResult> CreateCustomer(Customers customer)
         {
             await _customerService.Create(customer);
             return RedirectToAction("Index");
@@ -43,7 +42,7 @@ namespace GolmohammadiProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditCustomer(Customer customer)
+        public async Task<IActionResult> EditCustomer(Customers customer)
         {
             await _customerService.Update(customer);
             return RedirectToAction("Index");

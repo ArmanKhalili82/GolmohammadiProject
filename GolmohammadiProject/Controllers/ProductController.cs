@@ -1,5 +1,5 @@
-﻿using GolMohammadi.Business.ProductServices;
-using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Product;
+using GolMohammadi.Business.ProductServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GolmohammadiProject.Controllers;
@@ -15,7 +15,7 @@ public class ProductController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        List<Product> products = await _productService.GetAllProducts();
+        List<Products> products = await _productService.GetAllProducts();
         return View(products);
     }
 
@@ -26,7 +26,7 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateProduct(Product product)
+    public async Task<IActionResult> CreateProduct(Products product)
     {
         await _productService.Create(product);
         return RedirectToAction("Index");
@@ -40,7 +40,7 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditProduct(Product product)
+    public async Task<IActionResult> EditProduct(Products product)
     {
         await _productService.Update(product);
         return RedirectToAction("Index");

@@ -1,13 +1,13 @@
-﻿using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Product;
 
 namespace GolMohammadi.Business.ProductServices;
 
 public interface IProductService
 {
-    Task<List<Product>> GetAllProducts();
-    Task<Product> GetById(int id);
-    Task Create(Product product);
-    Task Update(Product product);
+    Task<List<Products>> GetAllProducts();
+    Task<Products> GetById(int id);
+    Task Create(Products product);
+    Task Update(Products product);
     Task Delete(int productId);
     //Task<List<SubGroup>> GetSubGroups(int productGroupId);
     //Task Create(Product product);

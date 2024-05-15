@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Golmohammadi.Models.Models.Factor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
@@ -9,13 +10,15 @@ using System.Threading.Tasks;
 
 namespace Golmohammadi.Models.Models.Product
 {
-    public class ProductGroup
+    public class Products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        public int SubGroupId { get; set; }
         [JsonIgnore]
-        public List<SubGroup> subGroups { get; set; }
+        public SubGroup SubGroup { get; set; }
+        public List<SellForm> sellForms { get; set; }
     }
 }

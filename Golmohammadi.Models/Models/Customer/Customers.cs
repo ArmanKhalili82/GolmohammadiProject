@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Golmohammadi.Models.Models.Factor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Golmohammadi.Models.Models.Customer
 {
-    public class Customer
+    public class Customers
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,6 +17,7 @@ namespace Golmohammadi.Models.Models.Customer
         public string Region { get; set; }
         public string PostalCode { get; set; }
         public string NationalCode { get; set; }
+        public List<SellForm> sellForms { get; set; }
 
     }
 }

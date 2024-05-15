@@ -1,6 +1,5 @@
 ﻿using Golmohammadi.Models.Models.Customer;
 using GolmohammadiProject.Data;
-using GolmohammadiProject.Models.Product;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace GolMohammadi.Business.CustomerServices
             _context = context;
         }
 
-        public async Task Create(Customer customer)
+        public async Task Create(Customers customer)
         {
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
@@ -26,24 +25,24 @@ namespace GolMohammadi.Business.CustomerServices
 
         public async Task Delete(int customerId)
         {
-            Customer obj = await _context.Customers.FindAsync(customerId);
+            Customers obj = await _context.Customers.FindAsync(customerId);
             _context.Remove(obj);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<Customer>> GetAllCustomers()
+        public async Task<List<Customers>> GetAllCustomers()
         {
-            List<Customer> customers = await _context.Customers.ToListAsync();
+            List<Customers> customers = await _context.Customers.ToListAsync();
             return customers;
         }
 
-        public async Task<Customer> GetById(int id)
+        public async Task<Customers> GetById(int id)
         {
             var customer = await _context.Customers.FindAsync(id);
             return customer;
         }
 
-        public async Task Update(Customer customer)
+        public async Task Update(Customers customer)
         {
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();

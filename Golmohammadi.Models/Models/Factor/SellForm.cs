@@ -1,4 +1,5 @@
-﻿using GolmohammadiProject.Models.Product;
+﻿using Golmohammadi.Models.Models.Customer;
+using Golmohammadi.Models.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Golmohammadi.Models.Models.Factor
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Products> Products { get; set; }
+        public Customers customer { get; set; }
         public int Unit { get; set; }
         public int TotalPrice { get; set; }
         public int TransportationPrice { get; set; }
