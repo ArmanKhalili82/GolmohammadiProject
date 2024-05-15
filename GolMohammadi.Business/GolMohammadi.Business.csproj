@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Golmohammadi.DataAccess\Golmohammadi.DataAccess.csproj" />
     <ProjectReference Include="..\Golmohammadi.Models\Golmohammadi.Models.csproj" />
+    <ProjectReference Include="..\Golmohammadi.ViewModels\Golmohammadi.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

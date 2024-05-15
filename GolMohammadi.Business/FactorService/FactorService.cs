@@ -1,5 +1,6 @@
 ﻿using Golmohammadi.Models.Models.Customer;
 using Golmohammadi.Models.Models.Factor;
+using Golmohammadi.ViewModels;
 using GolmohammadiProject.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -25,11 +26,17 @@ namespace GolMohammadi.Business.FactorService
             return factories;
         }
 
-        public async Task<SellForm> GetById(int id)
+        public async Task<SellFactorViewModel> GetById(int id)
         {
             var form = await _context.SellForms.FirstOrDefaultAsync(x => x.Id == id);
             var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == form.CustomerId);
-            return form;
+            SellFactorViewModel vm = new SellFactorViewModel()
+            {
+                Customer = new Customers()
+                {
+
+                }
+            }
         }   
     }
 }
