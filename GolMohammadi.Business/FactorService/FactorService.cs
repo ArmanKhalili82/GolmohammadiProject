@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GolMohammadi.Business.FactorService
 {
-    public class FactorService
+    public class FactorService: IFactorService
     {
         private readonly ApplicationDbContext _context;
 
@@ -34,9 +34,30 @@ namespace GolMohammadi.Business.FactorService
             {
                 Customer = new CustomerViewModel()
                 {
-                    Name = customer.Name
+                    Name = customer.Name,
+                    Address = customer.Address,
+                    Email = customer.Email,
+                    City = customer.City,
+                    Region = customer.Region,
+                    PostalCode = customer.PostalCode,
+                    NationalCode = customer.NationalCode
                 }
-            }
-        }   
+            };
+            return vm;
+        }
+        
+        public async Task<SellFactorViewModel> GetProduct(int id)
+        {
+            var form = await _context.SellForms.FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == form.ProductId);
+            var vm = new SellFactorViewModel()
+            {
+                Product = new ProductViewModel()
+                {
+                    Name = product.Name
+                }
+            };
+            return vm;
+        }
     }
 }

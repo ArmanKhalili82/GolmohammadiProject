@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Golmohammadi.ViewModels
 {
-    public class SellFactorViewModel
+    public class ProductViewModel
     {
-        public CustomerViewModel Customer { get; set; }
-        public ProductViewModel Product { get; set; }
+        public string Name { get; set; }
     }
 }

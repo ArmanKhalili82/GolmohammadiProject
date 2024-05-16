@@ -1,4 +1,5 @@
 ﻿using Golmohammadi.Models.Models.Factor;
+using Golmohammadi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace GolMohammadi.Business.FactorService
     public interface IFactorService
     {
         Task<List<SellForm>> GetAllFactors();
-        Task<SellForm> GetById(int id);
+        Task<SellFactorViewModel> GetById(int id);
+        Task<SellFactorViewModel> GetProduct(int id);
     }
 }
