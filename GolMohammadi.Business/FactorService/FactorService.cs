@@ -19,6 +19,12 @@ namespace GolMohammadi.Business.FactorService
         {
             _context = context;
         }
+        List<SellFactorViewModel> sellFactors = new List<SellFactorViewModel>();
+
+        public void Create(SellFactorViewModel sellFactorViewModel)
+        {
+            sellFactors.Add(sellFactorViewModel);
+        }
 
         public async Task<List<SellFactorViewModel>> GetAllFactors()
         {

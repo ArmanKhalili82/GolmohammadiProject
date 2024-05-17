@@ -1,4 +1,5 @@
-﻿using GolMohammadi.Business.FactorService;
+﻿using Golmohammadi.ViewModels;
+using GolMohammadi.Business.FactorService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GolmohammadiProject.Controllers
@@ -31,6 +32,13 @@ namespace GolmohammadiProject.Controllers
         {
             var product = await _factorService.GetProduct(id);
             return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Create(SellFactorViewModel sellFactorViewModel)
+        {
+            _factorService.Create(sellFactorViewModel);
+            return Json("Factor Added");
         }
     }
 }

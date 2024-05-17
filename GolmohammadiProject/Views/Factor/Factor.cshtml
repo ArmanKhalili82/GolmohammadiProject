@@ -61,5 +61,32 @@
             }
         </tbody>
     </table>
+
+    <form method="post">
+        <div class="border p-3 mt-4">
+            <input id="Id" hidden />
+            <div class="mb-3 row">
+                <label class="p-0">قیمت</label>
+                <input type="number" id="Price" class="form-control" />
+            </div>
+            <div class="mb-3 row">
+                <label class="p-0">واحد</label>
+                <input type="number" id="Unit" class="form-control" />
+            </div>
+            <div class="mb-3 row">
+                <label class="p-0">قیمت کل</label>
+                <input type="number" id="TotalPrice" class="form-control" />
+            </div>
+
+            <div class="row row">
+                <div class="col-6 col-md-3">
+                    <button type="submit" id="Save" class="btn btn-primary form-control" onclick="Create()">Create</button>
+                </div>
+            </div>
+        </div> 
+    </form>
 </div>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/sellform.js"></script>

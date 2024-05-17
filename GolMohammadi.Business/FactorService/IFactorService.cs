@@ -1,4 +1,5 @@
-﻿using Golmohammadi.Models.Models.Factor;
+﻿using Golmohammadi.Models.Models.Customer;
+using Golmohammadi.Models.Models.Factor;
 using Golmohammadi.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,5 +14,6 @@ namespace GolMohammadi.Business.FactorService
         Task<List<SellFactorViewModel>> GetAllFactors();
         Task<SellFactorViewModel> GetById(int id);
         Task<SellFactorViewModel> GetProduct(int id);
+        void Create(SellFactorViewModel sellFactorViewModel);
     }
 }
