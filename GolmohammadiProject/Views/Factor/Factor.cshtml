@@ -1,8 +1,48 @@
 ﻿@using Golmohammadi.ViewModels
 @model SellFactorViewModel
 
-@foreach(var item in Model.Customer)
-{
-    <div>@item.</div>
-}
+<div class="container">
+    <div class="row pt-4 pb-2">
+        <div class="col-4">
+            <h2>نام شرکت : شرکت گل محمدی</h2>
+        </div>
+        <div class="col-4">
+            <h2>ادرس : ستارخان</h2>
+        </div>
+        <div class="col-4">
+            <h2>تلفن :</h2>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    نام مشتری
+                </th>
+                <th>
+                    ادرس
+                </th>
+                <th>
+                    شهر
+                </th>
+                <th>
+                    منطقه
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customers)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.City</td>
+                    <td>@item.Region</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
