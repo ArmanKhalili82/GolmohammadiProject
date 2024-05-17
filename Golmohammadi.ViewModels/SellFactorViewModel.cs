@@ -8,8 +8,8 @@ namespace Golmohammadi.ViewModels
 {
     public class SellFactorViewModel
     {
-        public CustomerViewModel Customer { get; set; }
-        public ProductViewModel Product { get; set; }
+        public List<CustomerViewModel> Customer { get; set; }
+        public List<ProductViewModel> Product { get; set; }
         public int PriceUnit { get; set; }
         public int Unit { get; set; }
         public int TotalPrice { get; set; }

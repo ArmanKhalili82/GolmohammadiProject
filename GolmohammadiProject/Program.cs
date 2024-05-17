@@ -1,6 +1,7 @@
 using GolMohammadi.Business.CustomerServices;
 using GolMohammadi.Business.FactorService;
 using GolMohammadi.Business.ProductServices;
+using GolMohammadi.Business.SellFormService;
 using GolmohammadiProject.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IFactorService, FactorService>();
+builder.Services.AddScoped<ISellFormService, SellFormService>();
 
 var app = builder.Build();
 

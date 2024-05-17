@@ -1,0 +1,43 @@
+﻿@using Golmohammadi.Models.Models.Factor
+@model SellForm
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="ProductName" class="p-0"></label>
+            <input asp-for="ProductName" disabled class="form-control" />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Unit" class="p-0"></label>
+            <input asp-for="Unit" disabled class="form-control" />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="TransportationPrice" class="p-0"></label>
+            <input asp-for="TransportationPrice" disabled class="form-control" />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Tax" class="p-0"></label>
+            <input asp-for="Tax" disabled class="form-control" />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="TotalPrice" class="p-0"></label>
+            <input asp-for="TotalPrice" disabled class="form-control" />
+        </div>
+
+        <div class="row row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Delete</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="SellForm" asp-action="GetSellForms" class="btn btn-outline-secondary border form-control">
+                    Back To List
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+

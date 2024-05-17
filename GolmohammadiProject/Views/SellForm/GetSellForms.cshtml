@@ -1,0 +1,62 @@
+﻿@using Golmohammadi.Models.Models.Factor
+@model List<SellForm>
+
+<div class="container">
+    <div class="row pt-4 pb-2">
+        <div class="col-6">
+            <h2 class="text-primary">
+                لیست فرم های فروش
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="SellForm" asp-action="CreateSellForm" class="btn btn-primary">
+                <i class="bi bi-plus-square"></i> ایجاد فرم فروش
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    نام محصول
+                </th>
+                <th>
+                    واحد
+                </th>
+                <th>
+                    هزینه حمل و نقل
+                </th>
+                <th>
+                    مالیات
+                </th>
+                <th>
+                    قیمت کل
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Unit</td>
+                    <td>@item.TransportationPrice</td>
+                    <td>@item.Tax</td>
+                    <td>@item.TotalPrice</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="SellForm" asp-action="EditSellForm" asp-route-id="@item.Id" class="btn btn-primary">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-controller="SellForm" asp-action="DeleteSellForm" asp-route-id="@item.Id" class="btn btn-danger">
+                                <i class="bi bi-trash3"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

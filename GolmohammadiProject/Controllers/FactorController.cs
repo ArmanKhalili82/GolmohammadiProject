@@ -13,7 +13,7 @@ namespace GolmohammadiProject.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Factor()
         {
             var AllItem = await _factorService.GetAllFactors();
             return View(AllItem);
