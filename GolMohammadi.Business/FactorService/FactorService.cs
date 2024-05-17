@@ -23,10 +23,11 @@ namespace GolMohammadi.Business.FactorService
         public async Task<List<SellFactorViewModel>> GetAllFactors()
         {
             List<SellForm> factories = await _context.SellForms.ToListAsync();
-            List<SellFactorViewModel> vm = new  List<SellFactorViewModel>();
+            var vm = new SellFactorViewModel();
             foreach (var fact in factories)
             {
-                fact.Unit = 
+                fact.Unit = vm.Unit;
+                fact.TotalPrice = vm.TotalPrice;
             }
             return vm;
         }
