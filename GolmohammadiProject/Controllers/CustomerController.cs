@@ -15,7 +15,7 @@ namespace GolmohammadiProject.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> GetCustomers()
         {
             List<Customers> customers = await _customerService.GetAllCustomers();
             return View(customers);
@@ -31,7 +31,7 @@ namespace GolmohammadiProject.Controllers
         public async Task<IActionResult> CreateCustomer(Customers customer)
         {
             await _customerService.Create(customer);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetCustomers");
         }
 
         [HttpGet]
@@ -45,7 +45,7 @@ namespace GolmohammadiProject.Controllers
         public async Task<IActionResult> EditCustomer(Customers customer)
         {
             await _customerService.Update(customer);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetCustomers");
         }
 
         [HttpGet]
@@ -59,7 +59,7 @@ namespace GolmohammadiProject.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _customerService.Delete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetCustomers");
         }
     }
 }

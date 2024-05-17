@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GolMohammadi.Business\GolMohammadi.Business.csproj" />
+    <ProjectReference Include="..\Golmohammadi.Models\Golmohammadi.Models.csproj" />
+    <ProjectReference Include="..\Golmohammadi.ViewModels\Golmohammadi.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

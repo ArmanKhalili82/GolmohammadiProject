@@ -59,4 +59,103 @@ public class ProductController : Controller
         await _productService.Delete(id);
         return RedirectToAction("Index");
     }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetSubGroups()
+    {
+        List<SubGroup> subGroups = await _productService.GetAllSubGroup();
+        return View(subGroups);
+    }
+
+    [HttpGet]
+    public IActionResult CreateSubGroup()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateSubGroup(SubGroup subGroup)
+    {
+        await _productService.CreateSubGroup(subGroup);
+        return RedirectToAction("GetSubGroups");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditSubGroup(int id)
+    {
+        var subGroup = await _productService.GetSubGroup(id);
+        return View(subGroup);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditSubGroup(SubGroup subGroup)
+    {
+        await _productService.UpdateSubGroup(subGroup);
+        return RedirectToAction("GetSubGroups");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> DeleteSubGroup(int id)
+    {
+        var subGroup = await _productService.GetSubGroup(id);
+        return View(subGroup);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteSubGroups(int id)
+    {
+        await _productService.DeleteSubGroup(id);
+        return RedirectToAction("GetSubGroups");
+    }
+
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetProductGroups()
+    {
+        List<ProductGroup> productGroups = await _productService.GetAllProductGroup();
+        return View(productGroups);
+    }
+
+    [HttpGet]
+    public IActionResult CreateProductGroup()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateProductGroup(ProductGroup productGroup)
+    {
+        await _productService.CreateProductGroup(productGroup);
+        return RedirectToAction("GetProductGroups");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditProductGroup(int id)
+    {
+        var productGroup = await _productService.GetProductGroup(id);
+        return View(productGroup);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditProductGroup(ProductGroup productGroup)
+    {
+        await _productService.UpdateProductGroup(productGroup);
+        return RedirectToAction("GetProductGroups");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> DeleteProductGroup(int id)
+    {
+        var productGroup = await _productService.GetProductGroup(id);
+        return View(productGroup);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteProductGroups(int id)
+    {
+        await _productService.DeleteProductGroup(id);
+        return RedirectToAction("GetProductGroups");
+    }
 }

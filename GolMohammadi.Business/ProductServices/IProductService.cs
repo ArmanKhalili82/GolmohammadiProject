@@ -1,4 +1,5 @@
 ﻿using Golmohammadi.Models.Models.Product;
+using System.Threading.Tasks;
 
 namespace GolMohammadi.Business.ProductServices;
 
@@ -9,26 +10,16 @@ public interface IProductService
     Task Create(Products product);
     Task Update(Products product);
     Task Delete(int productId);
-    //Task<List<SubGroup>> GetSubGroups(int productGroupId);
-    //Task Create(Product product);
-    //Task<SubGroup> GetById(int id);
-    //Task Update(SubGroup subGroup);
-    //Task Delete(int id);
-    //Task<List<Product>> products();
-    //Task<List<SubGroup>> SubGroups();
-    ////Task<List<ProductGroup>> GetAllProductGroup();
-    ////Task<List<SubGroup>> GetAllSubGroup(int id);
-    ////Task<List<Product>> GetAllProduct();
-    ////Task CreateProductGroup (ProductGroup productGroup);
-    ////Task CreateSubGroup (SubGroup subGroup);
-    ////Task CreateProduct(Product product);
-    ////Task EditProductGroup(ProductGroup productGroup);
-    ////Task EditSubGroup(SubGroup subGroup);
-    ////Task EditProduct(Product product);
-    ////void Edit(int id);
-    ////void Delete(int id);
-    ////Task DeleteEditProductGroup(int id);
-    ////Task DeleteSubGroup(int id);
-    ////Task DeleteProduct(int id);
-    ////Task CallAllAddMethods(ProductGroup productGroup, SubGroup subGroup, Product product);
+
+    Task<List<SubGroup>> GetAllSubGroup();
+    Task<SubGroup> GetSubGroup(int id);
+    Task CreateSubGroup(SubGroup subGroup);
+    Task UpdateSubGroup(SubGroup subGroup);
+    Task DeleteSubGroup(int subGroupId);
+
+    Task<List<ProductGroup>> GetAllProductGroup();
+    Task<ProductGroup> GetProductGroup(int id);
+    Task CreateProductGroup(ProductGroup productGroup);
+    Task UpdateProductGroup(ProductGroup productGroup);
+    Task DeleteProductGroup(int productGroupId);
 }
