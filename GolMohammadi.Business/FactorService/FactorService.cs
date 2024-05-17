@@ -23,7 +23,12 @@ namespace GolMohammadi.Business.FactorService
         public async Task<List<SellForm>> GetAllFactors()
         {
             List<SellForm> factories = await _context.SellForms.ToListAsync();
-            return factories;
+            var vm = new SellFactorViewModel()
+            {
+                Unit = factories.Unit,
+                TotalPrice = factories.TotalPrice
+            };
+            return vm;
         }
 
         public async Task<SellFactorViewModel> GetById(int id)
