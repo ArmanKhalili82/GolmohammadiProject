@@ -1,5 +1,5 @@
 ﻿@using Golmohammadi.ViewModels
-@model SellFactorViewModel
+@model List<SellFactorViewModel>
 
 <div class="container">
     <div class="row pt-4 pb-2">
@@ -29,17 +29,34 @@
                 <th>
                     منطقه
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Customers)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Address</td>
-                    <td>@item.City</td>
-                    <td>@item.Region</td>
+                    <td>@item.Customer.Name</td>
+                    <td>@item.Customer.Address</td>
+                    <td>@item.Customer.City</td>
+                    <td>@item.Customer.Region</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    نام محصول
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
                 </tr>
             }
         </tbody>
