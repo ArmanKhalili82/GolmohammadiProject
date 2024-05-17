@@ -10,7 +10,7 @@ namespace GolMohammadi.Business.FactorService
 {
     public interface IFactorService
     {
-        Task<List<SellForm>> GetAllFactors();
+        Task<List<SellFactorViewModel>> GetAllFactors();
         Task<SellFactorViewModel> GetById(int id);
         Task<SellFactorViewModel> GetProduct(int id);
     }

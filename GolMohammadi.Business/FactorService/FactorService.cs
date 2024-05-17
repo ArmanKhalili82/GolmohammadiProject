@@ -20,14 +20,14 @@ namespace GolMohammadi.Business.FactorService
             _context = context;
         }
 
-        public async Task<List<SellForm>> GetAllFactors()
+        public async Task<List<SellFactorViewModel>> GetAllFactors()
         {
             List<SellForm> factories = await _context.SellForms.ToListAsync();
-            var vm = new SellFactorViewModel()
+            List<SellFactorViewModel> vm = new  List<SellFactorViewModel>();
+            foreach (var fact in factories)
             {
-                Unit = factories.Unit,
-                TotalPrice = factories.TotalPrice
-            };
+                fact.Unit = 
+            }
             return vm;
         }
 
