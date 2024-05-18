@@ -13,9 +13,10 @@ namespace Golmohammadi.Models.Models.Product
     public class Products
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        //[ForeignKey(nameof(Id))]
         public int SubGroupId { get; set; }
         [JsonIgnore]
         public SubGroup SubGroup { get; set; }
