@@ -14,6 +14,7 @@
         </div>
     </div>
 
+    <h3>لیست مشتریان و محصولات</h3>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -50,6 +51,15 @@
                 <th>
                     نام محصول
                 </th>
+                <th>
+                    قیمت واحد
+                </th>
+                <th>
+                    تعداد
+                </th>
+                <th>
+                    قیمت کل
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -57,25 +67,47 @@
             {
                 <tr>
                     <td>@item.Product.Name</td>
+                    <td>@item.PriceUnit</td>
+                    <td>@item.Unit</td>
+                    <td>@item.TotalPrice</td>
                 </tr>
             }
         </tbody>
     </table>
 
-    <form method="post">
+    <h3>فاکتور</h3>
+    <form id="createFactorForm">
         <div class="border p-3 mt-4">
-            <input id="Id" hidden />
+            @* <input id="Id" hidden /> *@
+            <div class="mb-3 row">
+                <label class="p-0">نام مشتری</label>
+                <select id="CustomerId" name="CustomerId" class="form-control">
+                    @foreach (var customer in Model.First().Customers)
+                    {
+                        <option value="@customer.Id">@customer.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3 row">
+                <label class="p-0">نام محصول</label>
+                <select id="ProductId" name="ProductId" class="form-control">
+                    @foreach (var product in Model.First().Products)
+                    {
+                        <option value="@product.Id">@product.Name</option>
+                    }
+                </select>
+            </div>
             <div class="mb-3 row">
                 <label class="p-0">قیمت</label>
-                <input type="number" id="Price" class="form-control" />
+                <input type="number" id="PriceUnit" name="PriceUnit class="form-control" />
             </div>
             <div class="mb-3 row">
                 <label class="p-0">واحد</label>
-                <input type="number" id="Unit" class="form-control" />
+                <input type="number" id="Unit" name="Unit" class="form-control" />
             </div>
             <div class="mb-3 row">
                 <label class="p-0">قیمت کل</label>
-                <input type="number" id="TotalPrice" class="form-control" />
+                <input type="number" id="TotalPrice" name="TotalPrice" class="form-control" />
             </div>
 
             <div class="row row">

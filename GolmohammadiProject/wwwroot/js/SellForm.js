@@ -2,22 +2,36 @@
 
 function Create() {
     var result = Validate();
-    if (result == false) {
+    if (!result) {
         return false;
     }
 
-    var formData = new Object();
-    formData.id = $('#Id').val();
-    formData.price = $('#Price').val();
-    formData.unit = $('#Unit').val();
-    formData.totalPrice = $('#TotalPrice').val();
+    //var formData = new Object();
+
+    //formData.customerId = $('#CustomerId').val(),
+    //formData.productId = $('#ProductId').val(),
+    //formData.id = $('#Id').val(),
+    //formData.price = $('#PriceUnit').val(),
+    //formData.unit = $('#Unit').val(),
+    //formData.totalPrice = $('#TotalPrice').val()
+
+    var formData = {
+        CustomerId: $('#CustomerId').val(),
+        ProductId: $('#ProductId').val(),
+        PriceUnit: $('PriceUnit').val(),
+        Unit: $('Unit').val(),
+        TotalPrice: $('TotalPrice').val()
+    };
 
     $.ajax({
         url: 'Factor/Create',
         data: formData,
         type: 'Post',
         success: function (response) {
-            if (response == null || response == undefined || response.length == 0) {
+            //if (!response || response == undefined || response.length == 0) {
+            //    alert('Unable to save the data');
+            //}
+            if (!response) {
                 alert('Unable to save the data');
             }
             else {
@@ -35,12 +49,12 @@ function Create() {
 function Validate() {
     var isValid = true;
 
-    if ($('#Price').val().trim() == "") {
-        $('#Price').css('border-color', 'red');
+    if ($('#PriceUnit').val().trim() == "") {
+        $('#PriceUnit').css('border-color', 'red');
         isValid = false;
     }
     else {
-        $('#Price').css('border-color', 'lightgrey');
+        $('#PriceUnit').css('border-color', 'lightgrey');
     }
 
     if ($('#Unit').val().trim() == "") {

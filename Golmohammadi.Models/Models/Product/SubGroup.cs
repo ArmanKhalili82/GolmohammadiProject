@@ -12,12 +12,11 @@ namespace Golmohammadi.Models.Models.Product
     public class SubGroup
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        //[ForeignKey(nameof(Id))]
         public int ProductGroupId { get; set; }
-        [JsonIgnore]
+        [ForeignKey(nameof(ProductGroupId))]
         public ProductGroup ProductGroup { get; set; }
         [JsonIgnore]
         public List<Products> Products { get; set; }
