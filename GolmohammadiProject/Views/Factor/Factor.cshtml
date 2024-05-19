@@ -78,28 +78,28 @@
     <h3>فاکتور</h3>
     <form id="createFactorForm">
         <div class="border p-3 mt-4">
-            @* <input id="Id" hidden /> *@
+            <input id="Id" hidden />
             <div class="mb-3 row">
                 <label class="p-0">نام مشتری</label>
-                <select id="CustomerId" name="CustomerId" class="form-control">
+                <select id="CustomerName" name="CustomerName" class="form-control">
                     @foreach (var customer in Model.First().Customers)
                     {
-                        <option value="@customer.Id">@customer.Name</option>
+                        <option value="@customer.Name">@customer.Name</option>
                     }
                 </select>
             </div>
             <div class="mb-3 row">
                 <label class="p-0">نام محصول</label>
-                <select id="ProductId" name="ProductId" class="form-control">
+                <select id="ProductName" name="ProductName" class="form-control">
                     @foreach (var product in Model.First().Products)
                     {
-                        <option value="@product.Id">@product.Name</option>
+                        <option value="@product.Name">@product.Name</option>
                     }
                 </select>
             </div>
             <div class="mb-3 row">
                 <label class="p-0">قیمت</label>
-                <input type="number" id="PriceUnit" name="PriceUnit class="form-control" />
+                <input type="number" id="PriceUnit" name="PriceUnit" class="form-control" />
             </div>
             <div class="mb-3 row">
                 <label class="p-0">واحد</label>

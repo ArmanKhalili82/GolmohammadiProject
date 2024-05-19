@@ -69,7 +69,6 @@ namespace GolMohammadi.Business.FactorService
             {
                 Product = new ProductViewModel()
                 {
-                    Id = product.Id,
                     Name = product.Name
                 }
             };

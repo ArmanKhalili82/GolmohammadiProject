@@ -16,8 +16,9 @@ function Create() {
     //formData.totalPrice = $('#TotalPrice').val()
 
     var formData = {
-        CustomerId: $('#CustomerId').val(),
-        ProductId: $('#ProductId').val(),
+        Id: $('#Id').val(),
+        CustomerName: $('#CustomerName').val(),
+        ProductName: $('#ProductName').val(),
         PriceUnit: $('PriceUnit').val(),
         Unit: $('Unit').val(),
         TotalPrice: $('TotalPrice').val()

@@ -53,7 +53,7 @@ public class ProductController : Controller
         return View(product);
     }
 
-    [HttpDelete]
+    [HttpPost, ActionName("DeleteProduct")]
     public async Task<IActionResult> Delete(int id)
     {
         await _productService.Delete(id);
@@ -102,7 +102,7 @@ public class ProductController : Controller
         return View(subGroup);
     }
 
-    [HttpDelete]
+    [HttpPost, ActionName("DeleteSubGroup")]
     public async Task<IActionResult> DeleteSubGroups(int id)
     {
         await _productService.DeleteSubGroup(id);
@@ -145,18 +145,17 @@ public class ProductController : Controller
         return RedirectToAction("GetProductGroups");
     }
 
-    //[HttpGet]
-    //public async Task<IActionResult> DeleteProductGroup(int id)
-    //{
-    //    var productGroup = await _productService.GetProductGroup(id);
-    //    return View(productGroup);
-    //}
+    [HttpGet]
+    public async Task<IActionResult> DeleteProductGroup(int id)
+    {
+        var productGroup = await _productService.GetProductGroup(id);
+        return View(productGroup);
+    }
 
-    [HttpDelete]
+    [HttpPost, ActionName("DeleteProductGroup")]
     public async Task<IActionResult> DeleteProductGroups(int id)
     {
         await _productService.DeleteProductGroup(id);
-        //return RedirectToAction("GetProductGroups");
-        return Ok();
+        return RedirectToAction("GetProductGroups");
     }
 }

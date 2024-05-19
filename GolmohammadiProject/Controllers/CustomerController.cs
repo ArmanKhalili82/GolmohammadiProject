@@ -55,7 +55,7 @@ namespace GolmohammadiProject.Controllers
             return View(customer);
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("DeleteCustomer")]
         public async Task<IActionResult> Delete(int id)
         {
             await _customerService.Delete(id);

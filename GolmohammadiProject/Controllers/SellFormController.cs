@@ -54,7 +54,7 @@ namespace GolmohammadiProject.Controllers
             return View(sellForm);
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("DeleteSellForm")]
         public async Task<IActionResult> DeleteSellForms(int id)
         {
             await _sellFormService.Delete(id);
