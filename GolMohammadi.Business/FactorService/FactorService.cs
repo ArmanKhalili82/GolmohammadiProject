@@ -36,6 +36,20 @@ namespace GolMohammadi.Business.FactorService
                 {
                     Unit = fact.Unit,
                     TotalPrice = fact.TotalPrice,
+                    Product = new ProductViewModel()
+                    {
+                        Name = fact.Products[0].Name,
+                    },
+                    Customer = new CustomerViewModel()
+                    {
+                        Name = fact.customer.Name,
+                        Address = fact.customer.Address,
+                        Email = fact.customer.Email,
+                        City = fact.customer.City,
+                        Region = fact.customer.Region,
+                        PostalCode = fact.customer.PostalCode,
+                        NationalCode = fact.customer.NationalCode
+                    },
                 });
             }
             return vm;
